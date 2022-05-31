@@ -20,7 +20,6 @@ public class ClasseExecutavel {
 
 		System.out.println("Nome: " + p1);
 		
-		
 		Pessoa p2 = new Pessoa();
 		p2.nome = "Maria";
 		System.out.println(p2.nome);
