@@ -25,5 +25,4 @@ public class ClasseExecutavel {
 		System.out.println(p2.nome);
 
 	}
-
 }
