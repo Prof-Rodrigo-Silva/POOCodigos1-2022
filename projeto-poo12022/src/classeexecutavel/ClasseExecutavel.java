@@ -7,22 +7,24 @@ public class ClasseExecutavel {
 
 	public static void main(String[] args) {
 
-		Pessoa p1 = new Pessoa();
+		//Pessoa p1 = new Pessoa();
 		Conta c1 = new Conta();
-
-		p1.nome = "Mario";
-		p1.idade = 45;
-		p1.cel = 999999999;
-		p1.email = "teste@gmail.com";
 		
-		c1.correntista = "João";
-		c1.id = 12345;
-
-		System.out.println("Nome: " + p1);
+		c1.setId(1234);
+		c1.setCorrentista("Mario");
+		c1.setSaldo(1577.00f);
 		
-		Pessoa p2 = new Pessoa();
-		p2.nome = "Maria";
-		System.out.println(p2.nome);
+		System.out.println("Correntista: "+c1.getCorrentista());
+		System.out.println("Id Conta: "+c1.getId());
+		System.out.println("Saldo: R$ "+c1.getSaldo());
+		
+		
+		if(c1.sacar(500.30f)) {
+			System.out.println("Sacou!!!! Saldo atualizado R$: "+c1.getSaldo());
+		}else {
+			System.out.println("Opa, saque não realizado!!");
+		}
+		
 
 	}
 }
