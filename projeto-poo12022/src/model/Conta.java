@@ -2,16 +2,14 @@ package model;
 
 public class Conta {
 	
-	private String correntista;
+	private Pessoa correntista;
 	private int id;
 	private float saldo;
-	
-	
-	
-	public String getCorrentista() {
+		
+	public Pessoa getCorrentista() {
 		return correntista;
 	}
-	public void setCorrentista(String correntista) {
+	public void setCorrentista(Pessoa correntista) {
 		this.correntista = correntista;
 	}
 	public int getId() {

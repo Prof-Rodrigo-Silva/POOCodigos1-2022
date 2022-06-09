@@ -6,8 +6,13 @@ import model.Pessoa;
 public class ClasseExecutavel {
 
 	public static void main(String[] args) {
-
-		//Pessoa p1 = new Pessoa();
+		
+		/*Pessoa p1 = new Pessoa();
+		p1.setNome("Rodrigo");
+		p1.setIdade(39);
+		
+		p1.nomeIdade();
+		
 		Conta c1 = new Conta();
 		
 		c1.setId(1234);
@@ -24,6 +29,8 @@ public class ClasseExecutavel {
 		}else {
 			System.out.println("Opa, saque não realizado!!");
 		}
+		*/
+		
 		
 
 	}

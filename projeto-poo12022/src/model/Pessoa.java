@@ -5,8 +5,16 @@ public class Pessoa {
 	private String nome;
 	private int idade;
 	private long cel;
-	private String email;
-	private String nomeMae;
+	
+	public Pessoa() {}
+	
+	public Pessoa(String nome, int idade, long cel) {
+		this.nome = nome;
+		this.idade = idade;
+		this.cel = cel;
+	}
+	
+	
 	public String getNome() {
 		return nome;
 	}
@@ -24,18 +32,9 @@ public class Pessoa {
 	}
 	public void setCel(long cel) {
 		this.cel = cel;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getNomeMae() {
-		return nomeMae;
-	}
-	public void setNomeMae(String nomeMae) {
-		this.nomeMae = nomeMae;
+	}	
+	public void nomeIdade() {
+		System.out.println("Nome: "+this.nome+ "| Idade: "+this.idade);
 	}
 	
 	
