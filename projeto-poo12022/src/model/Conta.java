@@ -3,20 +3,28 @@ package model;
 public class Conta {
 	
 	private Pessoa correntista;
-	private int id;
+	private int codigo;
 	private float saldo;
 		
+	public Conta() {}
+	
+	public Conta(Pessoa correntista, int codigo, float saldo) {
+		this.correntista = correntista;
+		this.codigo = codigo;
+		this.saldo = saldo;
+	}
+	
 	public Pessoa getCorrentista() {
 		return correntista;
 	}
 	public void setCorrentista(Pessoa correntista) {
 		this.correntista = correntista;
 	}
-	public int getId() {
-		return id;
+	public int getCodigo() {
+		return codigo;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 	public float getSaldo() {
 		return saldo;
