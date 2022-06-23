@@ -1,10 +1,14 @@
 package model;
 
-public class Conta {
+public abstract class Conta {
 	
 	private Pessoa correntista;
 	private int codigo;
 	private float saldo;
+	
+	public final int SACAR = 0;
+	public final int DEPOSITAR = 1;
+	public final int JUROS = 2;
 		
 	public Conta() {}
 	
@@ -35,14 +39,34 @@ public class Conta {
 	
 	public boolean sacar(float valor) {
 		if(this.saldo - valor >= 0) {
-			this.saldo = this.saldo - valor;
+			this.saldo -= valor;
 			return true;
 		}
 		return false;
 	}
 	
-	public void depositar(float valor) {
-		this.saldo = this.saldo + valor;
+	public final boolean depositar(float valor) {
+		this.saldo += valor;
+		return true;
+	}
+	
+	public final boolean movimentar(float valor, int opcao) {
+		if(opcao == SACAR) {
+			if(this.sacar(valor)) {
+				return true;	
+			}else {
+				return false;
+			}
+		}else if(opcao == DEPOSITAR) {
+			if(this.depositar(valor)) {
+				return true;
+			}
+			return false;
+		}else if(opcao == JUROS) {
+			this.depositar(valor);
+			return true;
+		}
+		return false;
 	}
 	
 

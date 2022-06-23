@@ -1,6 +1,9 @@
 package classeexecutavel;
 
 import model.Conta;
+import model.ContaComum;
+import model.ContaEspecial;
+import model.ContaPoupanca;
 import model.Endereco;
 import model.Pessoa;
 
@@ -8,7 +11,55 @@ public class ClasseExecutavel {
 
 	public static void main(String[] args) {
 		
-		Endereco ed1 = new Endereco();
+		Endereco endereco = new Endereco("Av São Judas", 500, "São Judas");
+		Pessoa pessoa = new Pessoa("José", 32, 999887766, endereco);
+		
+		System.out.println("######################################");
+		System.out.println("#            CONTA COMUM             #");
+		System.out.println("######################################");
+		
+		ContaComum contaComum = new ContaComum(pessoa, 1122, 500);
+		System.out.println("Saldo conta comum: "+contaComum.getSaldo());
+		boolean teste = contaComum.movimentar(50, contaComum.DEPOSITAR);
+		if(teste) {
+			System.out.println("Depósito realizado, saldo conta comum: "+contaComum.getSaldo());
+		}
+		System.out.println("Saldo conta comum: "+contaComum.getSaldo());
+		
+		teste = contaComum.movimentar(540, contaComum.SACAR);
+		if(teste) {
+			System.out.println("Saque realizado, saldo conta comum: "+contaComum.getSaldo());
+		}else{
+			System.out.println("Saldo insuficiente, saque não realizado.");
+		}
+		
+		System.out.println("######################################");
+		System.out.println("#          CONTA ESPECIAL            #");
+		System.out.println("######################################");
+		
+		ContaEspecial contaEspecial = new ContaEspecial(pessoa, 1122, 500, 600);
+		System.out.println("Saldo conta especial: "+contaEspecial.getSaldo());
+		System.out.println("Limite conta especial: "+contaEspecial.getLimite());
+		teste = contaEspecial.sacarEspecial(1200);
+		if(teste) {
+			System.out.println("Saldo conta especial: "+contaEspecial.getSaldo());
+			System.out.println("Limite conta especial: "+contaEspecial.getLimite());
+		}else{
+			System.out.println("Saldo insuficiente, saque não realizado.");
+			
+		}
+		
+		System.out.println("######################################");
+		System.out.println("#          CONTA POUPANÇA            #");
+		System.out.println("######################################");
+		ContaPoupanca contaPoupanca = new ContaPoupanca(pessoa, 3355, 1000);
+		System.out.println("Saldo conta poupança: "+contaPoupanca.getSaldo());
+		if(contaPoupanca.atualiazarSaldo(5)) {
+			System.out.println("Saldo atualizado com juros: "+contaPoupanca.getSaldo());
+		}
+		
+		
+		/*Endereco ed1 = new Endereco();
 		ed1.setNomeRua("Rua da Quebrada");
 		ed1.setNumero(139);
 		ed1.setBairro("São Judas");
@@ -19,7 +70,7 @@ public class ClasseExecutavel {
 		/*p1.setNome("José");
 		p1.setIdade(32);
 		p1.setCel(999887766);
-		p1.setEndereco("Rua da Quebrada!");*/
+		p1.setEndereco("Rua da Quebrada!");
 		
 		p2.setNome("Maria");
 		p2.setIdade(18);
@@ -54,9 +105,6 @@ public class ClasseExecutavel {
 		/*Pessoa p1 = new Pessoa();
 		p1.setNome("Rodrigo");
 		p1.setIdade(39);
-		
-		
-		
 		
 		//p1.nomeIdade();
 		

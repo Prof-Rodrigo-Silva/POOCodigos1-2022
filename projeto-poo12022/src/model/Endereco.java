@@ -7,6 +7,12 @@ public class Endereco {
 	private String bairro;
 	
 	public Endereco() {}
+	
+	public Endereco(String nome, int nr, String bairro) {
+		this.nomeRua = nome;
+		this.numero = nr;
+		this.bairro = bairro;
+	}
 
 	public String getNomeRua() {
 		return nomeRua;
