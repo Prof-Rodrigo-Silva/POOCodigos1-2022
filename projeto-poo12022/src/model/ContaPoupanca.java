@@ -11,7 +11,7 @@ public class ContaPoupanca extends Conta{
 	}
 	
 	public boolean atualiazarSaldo(float juros) {
-		return this.movimentar(juros, this.JUROS);
+		return this.movimentar(juros, JUROS);
 	}
 
 }

@@ -32,6 +32,10 @@ public class ClasseExecutavel {
 		}else{
 			System.out.println("Saldo insuficiente, saque não realizado.");
 		}
+		System.out.println("Número da Conta: "+contaComum.getNumeroContas());
+		System.out.println("Número da Agência: "+contaComum.getNumeroAgencia());
+		System.out.println("Número da Conta: "+Conta.getNumeroContas());
+		System.out.println("Número da Conta: "+Conta.getNumeroAgencia());
 		
 		System.out.println("######################################");
 		System.out.println("#          CONTA ESPECIAL            #");
@@ -48,6 +52,10 @@ public class ClasseExecutavel {
 			System.out.println("Saldo insuficiente, saque não realizado.");
 			
 		}
+		System.out.println("Número da Conta: "+contaEspecial.getNumeroContas());
+		System.out.println("Número da Agência: "+contaEspecial.getNumeroAgencia());
+		System.out.println("Número da Conta: "+Conta.getNumeroContas());
+		System.out.println("Número da Conta: "+Conta.getNumeroAgencia());
 		
 		System.out.println("######################################");
 		System.out.println("#          CONTA POUPANÇA            #");
@@ -57,6 +65,13 @@ public class ClasseExecutavel {
 		if(contaPoupanca.atualiazarSaldo(5)) {
 			System.out.println("Saldo atualizado com juros: "+contaPoupanca.getSaldo());
 		}
+		System.out.println("Número da Conta Especial: "+contaPoupanca.getNumeroContas());
+		
+		System.out.println("Número da Agência: "+contaPoupanca.getNumeroAgencia());
+		System.out.println("Número da Conta: "+Conta.getNumeroContas());
+		System.out.println("Número da Conta: "+Conta.getNumeroAgencia());
+		
+		System.out.println("Número da Conta Comum: "+contaComum.getNumeroContas());
 		
 		
 		/*Endereco ed1 = new Endereco();

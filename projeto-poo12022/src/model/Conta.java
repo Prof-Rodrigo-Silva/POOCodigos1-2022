@@ -2,20 +2,24 @@ package model;
 
 public abstract class Conta {
 	
-	private Pessoa correntista;
-	private int codigo;
-	private float saldo;
-	
+	protected Pessoa correntista;
+	protected int codigo;
+	protected float saldo;
+	protected static int numeroContas;
+	protected final static int NUMEROAGENCIA = 1122;
 	public final int SACAR = 0;
 	public final int DEPOSITAR = 1;
 	public final int JUROS = 2;
 		
-	public Conta() {}
+	public Conta() {
+		this.numeroContas++;
+	}
 	
 	public Conta(Pessoa correntista, int codigo, float saldo) {
 		this.correntista = correntista;
 		this.codigo = codigo;
 		this.saldo = saldo;
+		this.numeroContas++;
 	}
 	
 	public Pessoa getCorrentista() {
@@ -37,7 +41,7 @@ public abstract class Conta {
 		this.saldo = saldo;
 	}
 	
-	public boolean sacar(float valor) {
+	public final boolean sacar(float valor) {
 		if(this.saldo - valor >= 0) {
 			this.saldo -= valor;
 			return true;
@@ -67,6 +71,13 @@ public abstract class Conta {
 			return true;
 		}
 		return false;
+	}
+	
+	public static final int getNumeroContas() {
+		return numeroContas;
+	}
+	public static final int getNumeroAgencia() {
+		return NUMEROAGENCIA;
 	}
 	
 
