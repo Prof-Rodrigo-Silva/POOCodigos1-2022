@@ -25,7 +25,7 @@ public class ContaEspecial extends Conta{
 	public boolean sacarEspecial(float valor) {
 		float saldoComLimite = this.getSaldo() + limite;
 		if(saldoComLimite - valor >= 0f) {
-			super.movimentar(valor, SACAR);
+			this.movimentar(valor, SACAR);
 			atualizarSaldoLimite(valor, saldoComLimite);
 			return true;
 		}
