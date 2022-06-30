@@ -1,6 +1,8 @@
 package model;
 
-public class ContaEspecial extends Conta{
+import interfaces.Taxa;
+
+public final class ContaEspecial extends Conta implements Taxa{
 	
 	private float limite;
 	
@@ -38,6 +40,17 @@ public class ContaEspecial extends Conta{
 			this.limite = saldoComLimite - valor;				
 		}
 		return true;
+	}
+
+	@Override
+	public float getTaxaManutencao() {
+		return 15.00f;
+	}
+
+	@Override
+	public void descontarTaxaManutencao() {
+		this.setSaldo(this.getSaldo()- this.getTaxaManutencao());
+		
 	}
 
 }

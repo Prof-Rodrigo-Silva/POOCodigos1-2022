@@ -1,6 +1,6 @@
 package model;
 
-public final class ContaComum extends Conta{
+public sealed class ContaComum extends Conta permits ContaComumEstudante{
 	
 	public ContaComum() {
 		super();

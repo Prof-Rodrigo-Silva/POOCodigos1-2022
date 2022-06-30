@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Conta {
+public abstract sealed class Conta permits ContaComum, ContaEspecial, ContaPoupanca{
 	
 	protected Pessoa correntista;
 	protected int codigo;
