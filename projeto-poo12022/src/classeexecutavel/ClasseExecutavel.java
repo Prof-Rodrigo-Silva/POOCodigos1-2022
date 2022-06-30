@@ -14,7 +14,7 @@ public class ClasseExecutavel {
 		Endereco endereco = new Endereco("Av São Judas", 500, "São Judas");
 		Pessoa pessoa = new Pessoa("José", 32, 999887766, endereco);
 		
-		System.out.println("######################################");
+		/*System.out.println("######################################");
 		System.out.println("#            CONTA COMUM             #");
 		System.out.println("######################################");
 		
@@ -40,9 +40,9 @@ public class ClasseExecutavel {
 		System.out.println("######################################");
 		System.out.println("#          CONTA ESPECIAL            #");
 		System.out.println("######################################");
-		
+		*/
 		ContaEspecial contaEspecial = new ContaEspecial(pessoa, 1122, 500, 600);
-		System.out.println("Saldo conta especial: "+contaEspecial.getSaldo());
+		/*System.out.println("Saldo conta especial: "+contaEspecial.getSaldo());
 		System.out.println("Limite conta especial: "+contaEspecial.getLimite());
 		teste = contaEspecial.sacarEspecial(1200);
 		if(teste) {
@@ -59,8 +59,10 @@ public class ClasseExecutavel {
 		
 		System.out.println("######################################");
 		System.out.println("#          CONTA POUPANÇA            #");
-		System.out.println("######################################");
+		System.out.println("######################################");*/
+	
 		ContaPoupanca contaPoupanca = new ContaPoupanca(pessoa, 3355, 1000);
+		/*
 		System.out.println("Saldo conta poupança: "+contaPoupanca.getSaldo());
 		if(contaPoupanca.atualiazarSaldo(5)) {
 			System.out.println("Saldo atualizado com juros: "+contaPoupanca.getSaldo());
@@ -71,7 +73,7 @@ public class ClasseExecutavel {
 		System.out.println("Número da Conta: "+Conta.getNumeroContas());
 		System.out.println("Número da Conta: "+Conta.getNumeroAgencia());
 		
-		System.out.println("Número da Conta Comum: "+contaComum.getNumeroContas());
+		System.out.println("Número da Conta Comum: "+contaComum.getNumeroContas());*/
 		
 		
 		/*Endereco ed1 = new Endereco();
@@ -140,5 +142,13 @@ public class ClasseExecutavel {
 			System.out.println("Opa, saque não realizado!!");
 		}	
 */
+		movimentar(contaEspecial, 200, 1);
+		//movimentar(pessoa, 300, 1);
+	}
+	public static void movimentar(Object contaObject, float valor, int op) {
+		((ContaEspecial) contaObject).movimentar(valor, op);
+		System.out.println(((ContaEspecial) contaObject).getSaldo());
+		
+		//System.out.println(contaObject instanceof ContaEspecial);
 	}
 }
