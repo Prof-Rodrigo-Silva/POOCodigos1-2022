@@ -14,6 +14,8 @@ public class ClasseExecutavel {
 		Endereco endereco = new Endereco("Av São Judas", 500, "São Judas");
 		Pessoa pessoa = new Pessoa("José", 32, 999887766, endereco);
 		
+		System.out.println(pessoa);
+		
 		/*System.out.println("######################################");
 		System.out.println("#            CONTA COMUM             #");
 		System.out.println("######################################");
@@ -142,13 +144,13 @@ public class ClasseExecutavel {
 			System.out.println("Opa, saque não realizado!!");
 		}	
 */
-		movimentar(contaEspecial, 200, 1);
+		//movimentar(contaEspecial, 200, 1);
 		//movimentar(pessoa, 300, 1);
 	}
-	public static void movimentar(Object contaObject, float valor, int op) {
-		((ContaEspecial) contaObject).movimentar(valor, op);
-		System.out.println(((ContaEspecial) contaObject).getSaldo());
+	public static void movimentar(Object lua, float valor, int op) {
+		((ContaEspecial) lua).movimentar(valor, op);
+		System.out.println(((ContaEspecial) lua).getSaldo());
 		
-		//System.out.println(contaObject instanceof ContaEspecial);
+		System.out.println(lua instanceof Pessoa);
 	}
 }

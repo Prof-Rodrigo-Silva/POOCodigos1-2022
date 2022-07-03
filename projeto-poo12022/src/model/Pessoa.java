@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Pessoa{
 	
 	private String nome;
@@ -41,6 +43,32 @@ public class Pessoa{
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+	@Override
+	public String toString() {
+		return "Dados da Pessoa {nome=" + nome + ", endereco=" + endereco + "}";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(cel, endereco, idade, nome);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return cel == other.cel && Objects.equals(endereco, other.endereco) && idade == other.idade
+				&& Objects.equals(nome, other.nome);
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
